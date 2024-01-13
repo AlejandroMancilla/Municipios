@@ -33,6 +33,11 @@ public class Municipio {
         Area = area;
     }
 
+    @Override
+    public String toString() {
+        return "Municipio [Nombre=" + Nombre + ", Poblacion=" + Poblacion + ", Area=" + Area + "]";
+    }
+
     
 
 }

@@ -137,6 +137,11 @@ public class Main {
             System.out.println("BUSCAR MUNICIPIO EN " + Departamentos.get(Select-1).getNombre());
             System.out.println("Ingrese Nombre de Municipio: ");
             String Busqueda = sc.nextLine();
+            for (Municipio M : Departamentos.get(Select-1).getMunicipios()) {
+                if(M.getNombre().contains(Busqueda.toUpperCase())) {
+                    System.out.println(M.toString());
+                }
+            }
             
         }
     }
