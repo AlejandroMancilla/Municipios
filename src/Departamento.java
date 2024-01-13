@@ -23,7 +23,14 @@ public class Departamento {
         CalcularAP();
     }
 
+    public void EliminarMunicipio(int Index) {
+        this.Municipios.remove(Index);
+        CalcularAP();
+    }
+
     public void CalcularAP() {
+        this.AreaTotal = 0;
+        this.Poblacion = 0;
         for (Municipio M : Municipios) {
             this.AreaTotal += M.getArea();
             this.Poblacion += M.getPoblacion();
@@ -55,6 +62,15 @@ public class Departamento {
     }
 
     public float getAreaTotal() {
+        if(Municipios.size() > 0){
+            System.out.println("-".repeat(33));
+            System.out.printf("|%-20s|%-10s|%n", "MUNICIPIO", "ÁREA");
+            System.out.println("+" + "-".repeat(20) + "+" + "-".repeat(10) + "+");
+            for (Municipio M : Municipios) {
+                System.out.printf("|%20s|%10s|%n", M.getNombre(), String.valueOf(M.getArea()));
+            }
+            System.out.println("-".repeat(33));
+        }
         return AreaTotal;
     }
 
@@ -62,15 +78,35 @@ public class Departamento {
         AreaTotal = areaTotal;
     }
 
+    public int getPoblacion() {
+        if(Municipios.size() > 0){
+            System.out.println("-".repeat(35));
+            System.out.printf("|%-20s|%-12s|%n", "MUNICIPIO", "POBLACIÓN");
+            System.out.println("+" + "-".repeat(20) + "+" + "-".repeat(12) + "+");
+            for (Municipio M : Municipios) {
+                System.out.printf("|%20s|%12s|%n", M.getNombre(), String.valueOf(M.getPoblacion()));
+            }
+            System.out.println("-".repeat(35));
+        }
+        return Poblacion;
+    }
+
+    public void setPoblacion(int poblacion) {
+        Poblacion = poblacion;
+    }
+
     public void ListarMunicipios() {
         if(Municipios.size() == 0) {
             System.out.println("Departamento sin Municipios");
         }else{
+            System.out.printf("|%-2s|%-20s|%-12s|%-12s|%n", "ID", "MUNICIPIO", "POBLACIÓN", "ÁREA");
+            System.out.println("+" + "-".repeat(2) + "+" + "-".repeat(20) + "+" + "-".repeat(12) + "+" + "-".repeat(12) + "+");
+            int Count = 1;
             for (Municipio M : Municipios) {
-                System.out.println(M.getNombre());
-                System.out.printf("%,d %n" , M.getPoblacion());
-                System.out.println( M.getPoblacion());
+                System.out.printf("|%-2d|%20s|%12s|%12s|%n", Count, M.getNombre(), String.valueOf(M.getPoblacion()), String.valueOf(M.getPoblacion()));
+                Count++;
             }
+            System.out.println("+" + "-".repeat(2) + "+" + "-".repeat(20) + "+" + "-".repeat(12) + "+" + "-".repeat(12) + "+");
         }
     }
     

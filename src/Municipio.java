@@ -35,9 +35,6 @@ public class Municipio {
 
     @Override
     public String toString() {
-        return "Municipio [Nombre=" + Nombre + ", Poblacion=" + Poblacion + ", Area=" + Area + "]";
+        return "-".repeat(32) + "\nMUNICIPIO\n\tNombre = " + Nombre + "\n\tPoblacion = " + Poblacion + "\n\tArea = " + Area +"\n" + "-".repeat(32);
     }
-
-    
-
 }

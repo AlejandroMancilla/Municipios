@@ -2,11 +2,13 @@ public class Persona {
     private String Nombre;
     private String Telefono;
     private String Correo;
+    private String Partido;
     
-    public Persona(String nombre, String telefono, String correo) {
-        Nombre = nombre;
-        Telefono = telefono;
-        Correo = correo;
+    public Persona(String nombre, String telefono, String correo, String partido) {
+        this.Nombre = nombre;
+        this.Telefono = telefono;
+        this.Correo = correo;
+        this.Partido = partido;
     }
 
     public String getNombre() {
@@ -17,11 +19,11 @@ public class Persona {
         Nombre = nombre;
     }
 
-    public int getTelefono() {
+    public String getTelefono() {
         return Telefono;
     }
 
-    public void setTelefono(int telefono) {
+    public void setTelefono(String telefono) {
         Telefono = telefono;
     }
 
